@@ -1,3 +1,6 @@
+# Write a program to read your name, contact number, 
+# email, and birthdate and print those details on the 
+# screen. 
 
 name = input("Enter your name : ")
 no = input("Enter your contact number : ")

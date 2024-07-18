@@ -1,5 +1,8 @@
 import math
 
+# Write a program to calculate simple and compound 
+# interest.
+
 P = float(input("Enter the principal amount: "))
 R = float(input("Enter the annual interest rate (in %): "))
 T = float(input("Enter the time period (in years): "))

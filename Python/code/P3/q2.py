@@ -1,3 +1,6 @@
+# Write a program to compute the slope of a line 
+# between two points (x1, y1) and (x2, y2). 
+
 p1_x, p1_y = input("Enter the first point (x y): \n").split()
 p2_x, p2_y = input("Enter the second point (x y): \n").split()
 
