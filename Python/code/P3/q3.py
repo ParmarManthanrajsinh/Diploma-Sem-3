@@ -1,7 +1,7 @@
-import math
-
 # Write a program to calculate simple and compound 
 # interest.
+
+import math
 
 P = float(input("Enter the principal amount: "))
 R = float(input("Enter the annual interest rate (in %): "))
