@@ -35,8 +35,10 @@ while True:
         print(f"Number of elements in the list: ", len(my_list))
     elif choice == "4":
         index = int(input("Enter index: ")) 
-        print("Element at index ", index, ": ", my_list[index])
-        # print("Index ", index, " out of range.")
+        if index <= len(my_list):
+            print("Element at index ", index, ": ", my_list[index])
+        else:
+            print("Index ", index, " out of range.")
     elif choice == "5":
         my_list.sort()
         print("List sorted. Current list: ", my_list)
