@@ -12,7 +12,7 @@ int search(int n, int arr[], int x)
     {
         mid = (low + high) / 2;
 
-        if (x == arr[mid] || x == arr[low] || x == arr[high])
+        if (x == arr[mid])
         {
             printf("SUCCESSFUL SEARCH\n");
             return mid;
