@@ -21,9 +21,7 @@ void insert(int arr[], int e, int in)
 
     for (c; c >= in; c--)
     {
-        int temp = arr[c]; // sawping the c index with c-1
-        arr[c] = arr[c - 1];
-        arr[c - 1] = temp;
+        arr[c] = arr[c - 1]; // changing the c index with c-1
     }
     arr[c] = e; // inserting the element in the array
 }
