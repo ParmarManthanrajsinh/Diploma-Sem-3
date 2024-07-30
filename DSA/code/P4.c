@@ -61,7 +61,7 @@ int main()
     printf("Enter the key to search: ");
     scanf("%d", &key);
 
-    int i = search(10, arr, key);
+    int i = search(n, arr, key);
     printf("The element index is %d", i);
 
     return 0;
