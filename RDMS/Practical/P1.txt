@@ -1,0 +1,88 @@
+Q1:
+
+SQL> create table Account(Ano char(3), Balance number(9), Bnane varchar2(10));
+
+Table created.
+
+SQL> desc Account
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ANO                                                CHAR(3)
+ BALANCE                                            NUMBER(9)
+ BNANE                                              VARCHAR2(10)
+
+Q2
+
+SQL> create table Employee(Eid char(4), Ename varchar2(10), Birthdate date, Salary number(7) , City varchar2(10));
+
+Table created.
+
+SQL> desc Employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                CHAR(4)
+ ENAME                                              VARCHAR2(10)
+ BIRTHDATE                                          DATE
+ SALARY                                             NUMBER(7)
+ CITY                                               VARCHAR2(10)
+
+Q3
+Create a table named "products" with the following columns: 
+id (integer),name (varchar2(100)),price (decimal(10,2)) 
+description (varchar2(500))
+
+SQL> create table products(id integer,name varchar2(100),price decimal(10,2), description varchar2(500));
+
+Table created.
+
+SQL> desc products
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(38)
+ NAME                                               VARCHAR2(100)
+ PRICE                                              NUMBER(10,2)
+ DESCRIPTION                                        VARCHAR2(500)
+
+Q4
+Create table orders (id integer,user_id integer, product_id integer, quantity integer, price number(5,2) );
+
+Q5
+Change Bname column with width of 30 characters in Account table.
+
+SQL> alter table Account MODIFY( Bname varchar2(30));
+table altered.
+
+Q6
+SQL> alter table Account ADD( Birthdate date);
+Table altered.
+
+Q7
+SQL> alter table Account drop column Birthdate;
+Table altered.
+
+Q8
+SQL> alter table Account rename column Bname to brach_name;
+Table altered.
+
+Q9
+SQL> rename Employee to Emp;
+Table renamed.
+
+Q10
+SQL> create table Acc2 as select * from Account where 1=0;
+Table created.
+
+Q11
+SQL> create table Emp_Manager as select JOB from Employee where JOB = 'manager';
+Table created.
+
+Q12
+SQL> insert into Acc2 select * from Account;
+
+Q13
+SQL> drop table Emp_Manager;
+Table dropped.
+
+Q14
+SQL> truncate table Acc2;
+Table truncated.
