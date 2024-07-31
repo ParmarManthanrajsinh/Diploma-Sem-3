@@ -31,7 +31,7 @@ while True:
             my_list.remove(item)
             print("Item removed from the list.\nlist: ", my_list)
         else:
-            print("Item ", item, " not found in the list.")
+            print("Item not found in the list.")
 
     elif choice == "3":
         print("Number of elements in the list: ", len(my_list))
@@ -55,4 +55,4 @@ while True:
         break
 
     else:
-        print("Invalid choice. Please try again.")
+        print("Invalid choice")

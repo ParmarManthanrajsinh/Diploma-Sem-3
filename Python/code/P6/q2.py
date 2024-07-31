@@ -10,42 +10,31 @@ num = int(input("Enter the number of elements: "))
 
 arr = []
 
-p = 0
-n = 0
-zero = 0
-odd = 0
-even = 0
-avg = 0
-sum = 0
+p = n = zero = odd = even = avg = sum = 0
 
 
 for i in range(num):
-    print("Enter the element", i+1, ": ")
+    print("Enter the element", i + 1, ": ",end='')
     ind = int(input())
     arr.append(ind)
     sum += ind
 
-for i in arr:
-    if i > 0:
+    if ind > 0:
         p += 1
-    if i < 0:
+    if ind < 0:
         n += 1
-    if i == 0:
+    if ind == 0:
         zero = 0
-    if (i % 2) == 0:
+    if (ind % 2) == 0:
         even += 1
     else:
         odd += 1
 
 avg = sum / num
 
-print("Number of positive numbers: ",p)
-print("Number of positive negative: ",n)
-print("Number of zeros: ",zero)
-print("Number of odd numbers: ",odd)
-print("Number of even numbers: ",even)
-print("Average of all numbers: ",avg)
-
-
-
-
+print("Number of positive numbers: ", p)
+print("Number of negative numbers: ", n)
+print("Number of zeros: ", zero)
+print("Number of odd numbers: ", odd)
+print("Number of even numbers: ", even)
+print("Average of all numbers: ", avg)
