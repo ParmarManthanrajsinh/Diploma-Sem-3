@@ -30,16 +30,17 @@ struct node *insert_at_index(struct node *head, int data, int index)
     struct node *n = head;
     int i = 0;
 
-    while (i != index - 1)
+    while (n != NULL && i < index - 1)
     {
         n = n->next;
         i++;
     }
-    new_node->data = data;
+
     new_node->next = n->next;
     n->next = new_node;
+    new_node->data = data;
 
-    return new_node;
+    return head;
 }
 
 struct node *insert_at_end(struct node *head, int data)
@@ -84,9 +85,9 @@ int main()
     node3->data = 56;
     node3->next = NULL;
 
-    // head = insert_at_first(head, 10);
+    head = insert_at_first(head, 10);
     head = insert_at_index(head, 7, 3);
-    // head = insert_at_end(head, 67);
+    head = insert_at_end(head, 67);
 
     print_list(head);
 
