@@ -34,7 +34,7 @@ while True:
     elif choice == "3":
         print("Number of elements in the list: ", len(my_list))
     elif choice == "4":
-        index = int(input("Enter index: ")) 
+        index = int(input("Enter index: "))
         if index <= len(my_list):
             print("Element at index ", index, ": ", my_list[index])
         else:
