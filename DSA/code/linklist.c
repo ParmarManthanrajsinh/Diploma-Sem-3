@@ -16,6 +16,50 @@ void print_list(struct node *n)
     }
 }
 
+struct node *insert_at_first(struct node *head, int data)
+{
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    new_node->next = head;
+    new_node->data = data;
+    return new_node;
+}
+
+struct node *insert_at_index(struct node *head, int data, int index)
+{
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    struct node *n = head;
+    int i = 0;
+
+    while (i != index - 1)
+    {
+        n = n->next;
+        i++;
+    }
+    new_node->data = data;
+    new_node->next = n->next;
+    n->next = new_node;
+
+    return new_node;
+}
+
+struct node *insert_at_end(struct node *head, int data)
+{
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    struct node *n = head;
+
+    new_node->data = data;
+
+    while (n->next != NULL)
+    {
+        n = n->next;
+    }
+
+    n->next = new_node;
+    new_node->next = NULL;
+
+    return head;
+}
+
 int main()
 {
     struct node *head;
@@ -39,6 +83,10 @@ int main()
 
     node3->data = 56;
     node3->next = NULL;
+
+    // head = insert_at_first(head, 10);
+    head = insert_at_index(head, 7, 3);
+    // head = insert_at_end(head, 67);
 
     print_list(head);
 
