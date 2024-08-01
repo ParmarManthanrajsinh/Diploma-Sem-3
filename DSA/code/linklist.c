@@ -61,6 +61,14 @@ struct node *insert_at_end(struct node *head, int data)
     return head;
 }
 
+struct node *delete_ar_first(struct node *head)
+{
+    struct node *n = head;
+    head = head->next;
+    free(n);
+    return head;
+}
+
 int main()
 {
     struct node *head;
@@ -85,9 +93,10 @@ int main()
     node3->data = 56;
     node3->next = NULL;
 
-    head = insert_at_first(head, 10);
-    head = insert_at_index(head, 7, 3);
-    head = insert_at_end(head, 67);
+    // head = insert_at_first(head, 10);
+    // head = insert_at_index(head, 7, 3);
+    // head = insert_at_end(head, 67);
+    head = delete_ar_first(head);
 
     print_list(head);
 
