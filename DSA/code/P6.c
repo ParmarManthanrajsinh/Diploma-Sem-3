@@ -1,20 +1,64 @@
 #include <stdio.h>
 
-void find_text(char text[], char str[])
+#define max 10
+int arr[max];
+int top = -1;
+
+void push(int value)
 {
-    for (int i = 0; str[i] != '\0'; i++)
+    if (top != (max - 1))
     {
-        while(text[i] == str[i])
-        {
-            printf("Match ");
-        }
+        top++;
+        arr[top] = value;
+    }
+    else
+    {
+        printf("Stack Overflow LOL");
+    }
+}
+
+void pop()
+{
+    if (top != -1)
+    {
+        top--;
+    }
+    else
+    {
+        printf("LOL Stack Underflow");
+    }
+}
+
+int peek()
+{
+    if (top != -1)
+    {
+        return arr[top];
+    }
+    else
+    {
+        printf("LOL Stack is empty");
+    }
+}
+
+void print_stack()
+{
+    for (int i = top; i >= 0; i--)
+    {
+        printf("%d ", arr[i]);
     }
 }
 
 int main()
 {
-    char str[] = "Enter your name : Manthan";
-    find_text(str, "name");
+    push(5);
+    push(1);
+    push(9);
+    push(7);
+    push(4);
+    pop();
+    print_stack();
+    printf("\npeek %d", peek());
 
     return 0;
 }

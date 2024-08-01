@@ -23,29 +23,36 @@ while True:
     if choice == "1":
         item = input("Enter item to add: ")
         my_list.append(item)
-        print("Item ", item, " added to the list. Current list:", my_list)
+        print("Item added to the list.\nlist:", my_list)
+
     elif choice == "2":
         item = input("Enter item to remove: ")
         if item in my_list:
             my_list.remove(item)
-            print("Item ", item, " removed from the list. Current list: ", my_list)
+            print("Item removed from the list.\nlist: ", my_list)
         else:
-            print("Item ", item, " not found in the list.")
+            print("Item not found in the list.")
+
     elif choice == "3":
         print("Number of elements in the list: ", len(my_list))
+
     elif choice == "4":
         index = int(input("Enter index: "))
         if index <= len(my_list):
             print("Element at index ", index, ": ", my_list[index])
         else:
             print("Index ", index, " out of range.")
+
     elif choice == "5":
         my_list.sort()
-        print("List sorted. Current list: ", my_list)
+        print("List sorted.\nlist: ", my_list)
+
     elif choice == "6":
         my_list.reverse()
-        print("List reversed. Current list: ", my_list)
+        print("List reversed.\nlist: ", my_list)
+
     elif choice == "7":
         break
+
     else:
-        print("Invalid choice. Please try again.")
+        print("Invalid choice")

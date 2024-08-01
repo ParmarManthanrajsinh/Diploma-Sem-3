@@ -11,7 +11,7 @@
 # 1 2 3 4
 # 1 2 3 4 5
 
-print("Patten one:\n")
+print("Pattern one:\n")
 
 for i in range(5):
     for s in range(5-i):
