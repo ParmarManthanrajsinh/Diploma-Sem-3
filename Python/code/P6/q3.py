@@ -11,6 +11,14 @@ for i in range(n):
 
 print(List)
 
-List = list(set(List))
+temp = []
+
+for i in List:
+    if i not in temp:
+        temp.append(i)
+        
+List = temp
+temp.clear
+    
 
 print(List)
