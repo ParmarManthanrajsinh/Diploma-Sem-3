@@ -1,0 +1,78 @@
+Q1:
+SQL> insert into Account values('A01',5000,'vvn');
+1 row created.
+SQL> insert into Account values('A02',6000,'ksad');
+1 row created.
+SQL> insert into Account values('A03',7000,'anand');
+1 row created.
+SQL> insert into Account values('A04',8000,'ksad');
+1 row created.
+SQL> insert into Account values('A05',6000,'vvn');
+1 row created.
+
+Q2:
+SQL> insert into Employee values('E01','Tulsi','26-JAN-82',12000,'Ahmedabad','E02');
+1 row created.
+SQL> insert into Employee values('E02','Gopi','15-AUG-83',15000,'Anand',NULL);
+1 row created.
+SQL> insert into Employee values('E03','Rajshree','31-OCT-84',20000,'Vododara',NULL);
+1 row created.
+SQL> insert into Employee values('E04','Vaishali','23-MAR-85',25000,'Surat','E03');
+1 row created.
+SQL> insert into Employee values('E05','Laxmi','14-FEB-83',18000,'Anand','E03');
+1 row created.
+SQL> insert into Employee values('E06','Shivali','05-SEP-84',20000,'Surat','E02');
+1 row created.
+
+Q3:
+SQL> delete from Account where BNAME = 'ksad';
+2 rows deleted.
+
+Q4:
+SQL> UPDATE Account SET balance = balance * 1.10;
+5 rows updated.
+
+Q5:
+SQL> SELECT DISTINCT bname FROM Account;
+
+BNAME
+----------
+ksad
+vvn
+anand
+
+Q6:
+SQL> SELECT ename, salary FROM Employee WHERE salary < 8000;
+no rows selected
+
+Q7:
+SQL> SELECT ename, salary FROM Employees WHERE city = 'Anand' AND salary < 17000;
+
+ENAME          SALARY
+---------- ----------
+Gopi            15000
+
+Q8:
+SQL> SELECT ename, city FROM Employee WHERE city = 'Anand' or city = 'Surat';
+
+ENAME      CITY
+---------- ----------
+Gopi       Anand
+Vaishali   Surat
+Laxmi      Anand
+Shivali    Surat
+
+Q9:
+SQL> SELECT ename, salary, city FROM Employee WHERE city != 'Ahmedabad' or city != 'Vadodara' or city != 'Surat';
+
+ENAME          SALARY CITY
+---------- ---------- ----------
+manthan       9999999 rajkot
+Tulsi           12000 Ahmedabad
+Gopi            15000 Anand
+Rajshree        20000 Vododara
+Vaishali        25000 Surat
+Laxmi           18000 Anand
+Shivali         20000 Surat
+
+7 rows selected.
