@@ -67,7 +67,6 @@ SQL> SELECT ename, salary, city FROM Employee WHERE city != 'Ahmedabad' or city 
 
 ENAME          SALARY CITY
 ---------- ---------- ----------
-manthan       9999999 rajkot
 Tulsi           12000 Ahmedabad
 Gopi            15000 Anand
 Rajshree        20000 Vododara
@@ -76,3 +75,47 @@ Laxmi           18000 Anand
 Shivali         20000 Surat
 
 7 rows selected.
+
+Q10:
+SQL> select ename,salary from Employee where salary between 5000 and 15000;
+
+ENAME          SALARY
+---------- ----------
+Tulsi           12000
+Gopi            15000
+
+Q11:
+SQL> select ename || ' lives in ' || city from Employee;
+
+ENAME||'LIVESIN'||CITY
+------------------------------
+Tulsi lives in Ahmedabad
+Gopi lives in Anand
+Rajshree lives in Vododara
+Vaishali lives in Surat
+Laxmi lives in Anand
+Shivali lives in Surat
+
+6 rows selected.
+
+Q12:
+SQL> select * from Employee where ename like 'S%';
+
+EID  ENAME      BIRTHDATE     SALARY CITY       JOB
+---- ---------- --------- ---------- ---------- ----------
+E06  Shivali    05-SEP-84      20000 Surat      E02
+
+Q13:
+SQL> select * from Employee where ename like '%a%a%';
+
+EID  ENAME      BIRTHDATE     SALARY CITY       JOB
+---- ---------- --------- ---------- ---------- ----------
+E04  Vaishali   23-MAR-85      25000 Surat      E03
+
+Q14:
+SQL> select * from Employee where ename like '_____';
+
+EID  ENAME      BIRTHDATE     SALARY CITY       JOB
+---- ---------- --------- ---------- ---------- ----------
+E01  Tulsi      26-JAN-82      12000 Ahmedabad  E02
+E05  Laxmi      14-FEB-83      18000 Anand      E03
