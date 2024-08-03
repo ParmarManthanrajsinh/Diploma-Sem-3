@@ -2,7 +2,7 @@
 
 List = []
 
-n = int(input("Enter lenght of list: "))
+n = int(input("Enter length of list: "))
 
 for i in range(n):
     print("Enter the element", i + 1, ": ")
