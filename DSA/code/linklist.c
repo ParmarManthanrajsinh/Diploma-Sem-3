@@ -123,6 +123,22 @@ struct node *delete_at_end(struct node *head)
     return head;
 }
 
+int search(struct node *head, int value)
+{
+    struct node *ptr = head;
+    int c = 0;
+
+    while (ptr->data != value && ptr->next != NULL)
+    {
+        ptr = ptr->next;
+        c++;
+    }
+    if (ptr->data == value)
+        return c;
+    else
+        return -1;
+}
+
 int main()
 {
     struct node *head;
@@ -157,6 +173,8 @@ int main()
     head = delete_at_value(head, 23);
 
     print_list(head);
+
+    printf("56 is at index %d\n", search(head, 56));
 
     return 0;
 }
