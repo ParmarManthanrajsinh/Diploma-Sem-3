@@ -1,0 +1,55 @@
+Q1:
+
+a:
+    SQL> update Employee set salary = 5000 where eid = 'E01';
+    1 row updated.
+    SQL> commit
+
+b:
+    SQL> savepoint s1;
+
+    Savepoint created.
+
+    SQL> delete from Employee where city = 'Anand';
+
+    2 rows deleted.
+
+    SQL> select * from Employee;
+
+    EID  ENAME      BIRTHDATE     SALARY CITY       JOB
+    ---- ---------- --------- ---------- ---------- ----------
+    E01  Tulsi      26-JAN-82       5000 Ahmedabad  E02
+    E03  Rajshree   31-OCT-84      20000 Vododara
+    E04  Vaishali   23-MAR-85      25000 Surat      E03
+    E06  Shivali    05-SEP-84      20000 Surat      E02
+
+    SQL> rollback to savepoint s1;
+
+    Rollback complete.
+
+    SQL> select * from Employee;
+
+    EID  ENAME      BIRTHDATE     SALARY CITY       JOB
+    ---- ---------- --------- ---------- ---------- ----------
+    E01  Tulsi      26-JAN-82       5000 Ahmedabad  E02
+    E02  Gopi       15-AUG-83      15000 Anand
+    E03  Rajshree   31-OCT-84      20000 Vododara
+    E04  Vaishali   23-MAR-85      25000 Surat      E03
+    E05  Laxmi      14-FEB-83      18000 Anand      E03
+    E06  Shivali    05-SEP-84      20000 Surat      E02
+
+    6 rows selected.
+
+Q2:
+
+a:
+    SQL> create user Account identified by pass;
+    User created.
+b:
+    SQL> Grant select, update on Employee to Account;
+    Grant succeeded.
+c:
+    SQL> revoke update on Employee from Account;
+    Revoke succeeded.
+d:
+    ans comming soon. lol

@@ -1,0 +1,14 @@
+Q1:
+SQL> select to_number('+01234.78') from dual;
+
+TO_NUMBER('+01234.78')
+----------------------
+               1234.78
+
+Q2:
+SQL> select to_char(123789,'9,99,999') from dual;
+
+TO_CHAR(1
+---------
+ 1,23,789
+

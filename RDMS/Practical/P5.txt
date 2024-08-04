@@ -1,0 +1,149 @@
+numeric function:- 
+
+1. Find the absolute value of -15.
+SQL> select abs(-15) from dual;
+
+  ABS(-15)
+----------
+        15
+
+2. Find the square root of 81.
+SQL> select sqrt(81) from dual;
+
+  SQRT(81)
+----------
+         9
+
+3. Find the value for 3 raised to power 4.
+SQL> select power(3,4) from dual;
+
+POWER(3,4)
+----------
+        81
+
+4. Find the remainder for 16 divided by 5.
+SQL> select mod(16,5) from dual;
+
+ MOD(16,5)
+----------
+         1
+
+5. Find the largest integer value which is greater than or equal to -27.2. 
+SQL> select floor(-27.2) from dual;
+
+FLOOR(-27.2)
+------------
+         -28
+
+6. Find the value for 182.284 which is rounded to -2.
+SQL> select round(182.284,-2) from dual;
+
+ROUND(182.284,-2)
+-----------------
+              200
+
+7. Find the value for 182.284 which is truncated to 1.
+SQL> select round(182.284,1) from dual;
+
+ROUND(182.284,1)
+----------------
+           182.3
+
+character function:- 
+
+1. Count number of characters in a string “Computer Engineering”.
+SQL> select length('manthan') from dual;
+
+LENGTH('MANTHAN')
+-----------------
+                7
+
+2. Display name of all employees in uppercase.
+SQL> select upper(ename) from Employee;
+
+UPPER(ENAME)
+------------
+TULSI
+GOPI
+RAJSHREE
+VAISHALI
+LAXMI
+SHIVALI
+
+6 rows selected.
+
+3. Display first letter of each word in a string “character function” in uppercase.
+SQL> select substr(ename,1,1) from Employee;
+
+S
+-
+T
+G
+R
+V
+L
+S
+
+6 rows selected.
+
+4. Extract 11 characters from the string “Computer Engineering”, starting from 12th character.
+SQL> select substr('Computer Engineering',12,11) from dual;
+
+SUBSTR('C
+---------
+gineering
+
+5. Display last name of all employees’ right justified with total length of 20 characters, fill 
+up the blank characters with “#”.
+SQL> select lpad(ename,20,'#') from Employee;
+
+LPAD(ENAME,20,'#')
+--------------------
+###############Tulsi
+################Gopi
+############Rajshree
+############Vaishali
+###############Laxmi
+#############Shivali
+
+6 rows selected.
+
+6. Remove characters “gbrsea” from string “greatest” from left side.
+SQL> select ltrim('greatest','gbrsea') from dual;
+
+LTRI
+----
+test
+
+7. Change the word “govern” by “suppli” in a string “government”.
+SQL> select REPLACE('government','govern','suppli') from dual;
+
+REPLACE('G
+----------
+suppliment
+
+8. Display ascii values of ‘s’ ,’A’ and ‘a’. 
+SQL> select ascii('s') from dual;
+
+ASCII('S')
+----------
+       115
+
+SQL> select ascii('A') from dual;
+
+ASCII('A')
+----------
+        65
+
+SQL> select ascii('a') from dual;
+
+ASCII('A')
+----------
+        97
+
+9. Find the first occurrence of “base” in string ‘Database’.
+SQL> select Instr('Database','base') from dual;
+
+INSTR('DATABASE','BASE')
+------------------------
+                       5

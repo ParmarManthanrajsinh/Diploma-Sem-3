@@ -1,0 +1,41 @@
+Q1:
+SQL> Select Add_Months(sysdate,4) from dual;
+
+ADD_MONTH
+---------
+04-DEC-24
+
+Q2:
+SQL> Select Months_Between('01-JAN-19','01-MAY-19') from dual;
+
+MONTHS_BETWEEN('01-JAN-19','01-MAY-19')
+---------------------------------------
+                                    -4
+
+Q3:
+SQL> Select last_day('01-FEB-19') from dual;
+
+LAST_DAY(
+---------
+28-FEB-19
+
+Q4:
+SQL> Select next_day('18-JUN-19','TUESDAY') from dual;
+
+NEXT_DAY(
+---------
+25-JUN-19
+
+Q5:
+SQL> Select round(to_date('17-JUN-19'),'day') from dual;
+
+ROUND(TO_
+---------
+16-JUN-19
+
+Q6:
+SQL> Select round(to_date('17-JUN-19 12:35:00 PM','DD-MM-YY HH:MI:SS PM')) from dual;
+
+ROUND(TO_
+---------
+18-JUN-19
