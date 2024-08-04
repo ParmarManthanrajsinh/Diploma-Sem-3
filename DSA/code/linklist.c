@@ -14,6 +14,7 @@ void print_list(struct node *n)
         printf("%d ", n->data);
         n = n->next;
     }
+    printf("\n");
 }
 
 struct node *insert_at_first(struct node *head, int data)
@@ -61,11 +62,64 @@ struct node *insert_at_end(struct node *head, int data)
     return head;
 }
 
-struct node *delete_ar_first(struct node *head)
+struct node *delete_at_first(struct node *head)
 {
     struct node *n = head;
     head = head->next;
     free(n);
+    return head;
+}
+
+struct node *delete_at_index(struct node *head, int index)
+{
+    struct node *p = head;
+    struct node *q = head->next;
+
+    for (int i = 0; i < (index - 1); i++)
+    {
+        p = p->next;
+        q = q->next;
+    }
+
+    p->next = q->next;
+    free(q);
+
+    return head;
+}
+
+struct node *delete_at_value(struct node *head, int value)
+{
+    struct node *p = head;
+    struct node *q = head->next;
+
+    while (q->data != value && q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    if (q->data == value)
+    {
+        p->next = q->next;
+        free(q);
+    }
+
+    return head;
+}
+
+struct node *delete_at_end(struct node *head)
+{
+    struct node *p = head;
+    struct node *q = head->next;
+
+    while (q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+
+    p->next = NULL;
+    free(q);
+
     return head;
 }
 
@@ -93,10 +147,14 @@ int main()
     node3->data = 56;
     node3->next = NULL;
 
+    print_list(head);
     // head = insert_at_first(head, 10);
     // head = insert_at_index(head, 7, 3);
     // head = insert_at_end(head, 67);
-    head = delete_ar_first(head);
+    // head = delete_at_first(head);
+    // head = delete_at_index(head, 2);
+    // head = delete_at_end(head);
+    head = delete_at_value(head, 23);
 
     print_list(head);
 
