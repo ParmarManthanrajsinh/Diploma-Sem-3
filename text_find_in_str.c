@@ -14,20 +14,17 @@ void find_text(char text[], char str[])
             {
                 if (str[k] == text[j])
                 {
-                    // printf("%d ", k);
                     c++;
-                    // printf("match ");
                 }
                 else
                 {
                     c = 0;
                 }
-
-                if (c == strlen(text))
-                {
-                    printf("found");
-                }
                 k++;
+            }
+            if (c == strlen(text))
+            {
+                printf("found %s",text);
             }
         }
     }
@@ -36,7 +33,7 @@ void find_text(char text[], char str[])
 int main()
 {
     char str[] = "Enter your name : Manthan";
-    find_text("dfdsf:", str);
+    find_text("name", str);
 
     return 0;
 }
