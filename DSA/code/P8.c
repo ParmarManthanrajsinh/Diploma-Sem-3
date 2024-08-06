@@ -14,7 +14,7 @@ void print_queue()
 
 void enqueue(int value)
 {
-    if (rear == max - 1)
+    if (rear == (max - 1))
     {
         printf("Queue is full\n");
         return;
