@@ -52,4 +52,5 @@ c:
     SQL> revoke update on Employee from Account;
     Revoke succeeded.
 d:
-    ans comming soon. lol
+    SQL> Grant all on Employee to public;
+    Grant succeeded.
