@@ -16,5 +16,24 @@ Q2:
 SQL>SELECT account_type, SUM(balance) AS total_balance
     FROM accounts
     WHERE branch_name = 'vvn'
-    GROUP BY account_type;
+    GROUP BY CURRENT;
+
+Q3:
+SQL>SELECT CURRENT, SUM(balance) AS total_balance
+    FROM account
+    GROUP BY CURRENT
+    HAVING SUM(balance) > 12000;
+
+Q4:
+SQL> select city,sum(salary) as total_salary from employee GROUP by city;
+
+CITY       TOTAL_SALARY
+---------- ------------
+Anand             33000
+Vododara          20000
+Ahmedabad          5000
+Surat             45000
+rajkot          9999999
+
+
 
