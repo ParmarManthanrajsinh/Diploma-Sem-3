@@ -15,7 +15,7 @@ SQL>SELECT
 Q2:
 SQL>SELECT account_type, SUM(balance) AS total_balance
     FROM accounts
-    WHERE branch_name = 'vvn'
+    WHERE CURRENT = 'vvn'
     GROUP BY CURRENT;
 
 Q3:
