@@ -19,7 +19,7 @@ TO_CHAR(SYSDATE,'
 -----------------
 wednesday-08-2024
 
-Q4:
+Q4: #note this is not proper ans, write it at your risk;
 SQL>SELECT 
         CASE 
             WHEN input_value = 'MAX' THEN 'this is maximum'
