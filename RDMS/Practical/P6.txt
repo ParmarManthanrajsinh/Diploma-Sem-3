@@ -12,3 +12,28 @@ TO_CHAR(1
 ---------
  1,23,789
 
+Q3:
+SQL> select to_char(SYSDATE,'day-MM-YYYY') from dual;
+
+TO_CHAR(SYSDATE,'
+-----------------
+wednesday-08-2024
+
+Q4:
+SQL>SELECT 
+        CASE 
+            WHEN input_value = 'MAX' THEN 'this is maximum'
+            WHEN input_value = 'MIN' THEN 'this is minimum'
+            ELSE 'this is equal'
+        END AS message
+    FROM table;
+
+Q1:
+SQL> select max(salary), min(salary), avg(salary) from employee;
+
+MAX(SALARY) MIN(SALARY) AVG(SALARY)
+----------- ----------- -----------
+    9999999        5000  1443285.57
+
+Q2:
+SQL> select count(salary), sum(salary) from Employee where city = 'surat';

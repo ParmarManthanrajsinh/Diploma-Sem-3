@@ -1,0 +1,20 @@
+Q1:
+SQL>SELECT 
+        branch_id, 
+        account_type, 
+        SUM(balance) AS total_balance
+    FROM 
+        Account
+    GROUP BY 
+        01, 
+        SAVEING
+    ORDER BY 
+        02, 
+        CURRENT;
+
+Q2:
+SQL>SELECT account_type, SUM(balance) AS total_balance
+    FROM accounts
+    WHERE branch_name = 'vvn'
+    GROUP BY account_type;
+
