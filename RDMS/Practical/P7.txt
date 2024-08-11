@@ -1,7 +1,7 @@
 Q1:
 SQL>SELECT 
-        branch_id, 
-        account_type, 
+        account, 
+        SAVEING, 
         SUM(balance) AS total_balance
     FROM 
         Account
@@ -13,7 +13,7 @@ SQL>SELECT
         CURRENT;
 
 Q2:
-SQL>SELECT account_type, SUM(balance) AS total_balance
+SQL>SELECT CURRENT, SUM(balance) AS total_balance
     FROM accounts
     WHERE CURRENT = 'vvn'
     GROUP BY CURRENT;
