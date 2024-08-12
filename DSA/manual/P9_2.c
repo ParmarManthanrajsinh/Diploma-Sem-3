@@ -9,11 +9,11 @@ struct Point
 
 int main()
 {
-    struct Point *p1;
-    struct Point *p2;
+    struct Point point_1;
+    struct Point point_2;
 
-    p1 = (struct Point *)malloc(sizeof(struct Point));
-    p2 = (struct Point *)malloc(sizeof(struct Point));
+    struct Point *p1 = &point_1;
+    struct Point *p2 = &point_2;
 
     printf("Enter x & y of point 1: ");
     scanf("%d,%d", &p1->x, &p1->y);
