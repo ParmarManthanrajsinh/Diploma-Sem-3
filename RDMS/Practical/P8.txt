@@ -1,15 +1,4 @@
 Q1:
-SQL> select ename,salary from employee
-    case salary
-    when salary < 15000
-    then LOW
-    when salary between 15000 to 20000
-    then Medium
-    when salary > 20000
-    then High
-    end;
-
-Q2:
 SQL> SELECT
   2      ename,
   3      salary,
@@ -32,7 +21,7 @@ Shivali         20000 Medium
 
 6 rows selected.
 
-Q3:
+Q2:
 SQL> SELECT
   2      SUM(CASE WHEN salary < 15000 THEN salary ELSE 0 END) AS Total_Low_Salary,
   3      SUM(CASE WHEN salary BETWEEN 15000 AND 20000 THEN salary ELSE 0 END) AS Total_Medium_Salary,

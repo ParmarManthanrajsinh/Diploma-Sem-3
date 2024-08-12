@@ -1,0 +1,65 @@
+Q1:
+
+~$ cal
+    August 2024       
+Su Mo Tu We Th Fr Sa  
+             1  2  3  
+ 4  5  6  7  8  9 10  
+11 12 13 14 15 16 17  
+18 19 20 21 22 23 24  
+25 26 27 28 29 30 31
+
+~$ whoami
+user
+
+~$ ls
+linux.term  manthan  terminal
+
+~$ cat manthan
+lol this file is empty;
+
+~$ wc manthan
+ 1  5 24 manthan
+
+~$ ls | wc
+      3       3      40
+
+Q2:
+
+~$ echo "Hello, World!"
+Hello, World!
+
+~$ exit 0
+exit
+There are stopped jobs.
+
+~$ date
+Sun Aug 11 08:02:27 UTC 2024
+
+~$ time ls
+2024-08-11-file-1.term  manthan  terminal
+
+real    0m0.002s
+user    0m0.001s
+sys     0m0.000s
+
+~$ man ls
+
+~$ ln file1 file2
+
+~$ nl manthan
+     1  lol this file is empty;
+
+Q3:
+
+
+~$ head -n 1 manthan
+this is header
+
+~$ tail -n 1 manthan
+this is footer
+
+~$ grep "is" manthan
+this is header
+this is mid
+this is footer
