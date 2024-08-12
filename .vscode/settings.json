@@ -4,6 +4,9 @@
         "charconv": "c",
         "xmemory": "c",
         "xstring": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "format": "c",
+        "initializer_list": "c",
+        "utility": "c"
     }
 }
