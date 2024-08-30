@@ -2,7 +2,7 @@
 
 void substr(char str[], int e, int n)
 {
-    char sub[n];
+    char sub[100];
     int i = 0;
 
     while (i < n)
