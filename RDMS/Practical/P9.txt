@@ -1,3 +1,18 @@
-insert into Branch values('vvn','Mota Bazer, VV Nager');
-insert into Branch values('ksad','Chhota Bazer, Karamsad');
-insert into Branch values('anand','Nana Bazer, anand');
+Q1:
+
+SQL> SELECT cname FROM customer UNION SELECT ename FROM employee;
+
+CNAME
+----------
+Gopi
+Krishna
+Laxmi
+Palak
+Rajshree
+Shivali
+Tulsi
+Vaishali
+
+8 rows selected.
+
+Q2:

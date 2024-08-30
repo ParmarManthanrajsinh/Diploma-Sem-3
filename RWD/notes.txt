@@ -1,0 +1,28 @@
+css -> bootstrap
+different types of chass:
+    meadia object
+    navigation object
+    pills
+    input groups components
+    button groups and button toolbar components
+    responsive table
+    Grid system:
+        container
+        container-fluid
+
+    container and container fluid
+    bootstrap framework
+    Install Bootstrap
+    
+js -> boorstrap
+different types of packages:
+    plugin
+
+Install Bootstrap:
+        bootstrap.css
+        bootstrap-min.css
+        bootstrap.bundle.js
+
+margin: 150px
+padding: 50px
+1rem: 16px
