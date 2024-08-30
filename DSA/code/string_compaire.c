@@ -6,13 +6,16 @@ void STRCAP(char str1[], char str2[])
     int len1 = strlen(str1);
     int len2 = strlen(str2);
 
-    if (len1 != len2) {
+    if (len1 != len2)
+    {
         printf("string are not same");
         return;
     }
 
-    for (int i = 0; i < len1; i++) {
-        if (str1[i] != str2[i]) {
+    for (int i = 0; i < len1; i++)
+    {
+        if (str1[i] != str2[i])
+        {
             printf("string are not same");
             return;
         }
