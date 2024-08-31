@@ -71,7 +71,7 @@ void dequeue(struct queue *q)
 int main()
 {
     struct queue *q = (struct queue *)malloc(sizeof(struct queue));
-    q->size = 10;
+    q->size = 5;
     q->arr = (int *)malloc(q->size * sizeof(int));
     q->front = -1;
     q->rear = -1;
