@@ -58,7 +58,7 @@ void dequeue(struct queue *q)
     }
 
     if (q->front == q->rear)
-    { // Queue has only one element
+    {
         q->front = -1;
         q->rear = -1;
     }
