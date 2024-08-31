@@ -11,6 +11,12 @@ struct queue
 
 void print_queue(struct queue *q)
 {
+    if (q->front == -1 || q->front > q->rear)
+    {
+        printf("Queue is empty cannot print\n");
+        return;
+    }
+
     int front = q->front;
     int rear = q->rear;
     while (front <= rear)
@@ -70,8 +76,25 @@ int main()
     enqueue(q, 20);
     enqueue(q, 30);
     enqueue(q, 40);
+    enqueue(q, 40);
+    enqueue(q, 40);
+    enqueue(q, 40);
+    enqueue(q, 40);
+    enqueue(q, 40);
+    enqueue(q, 40);
     enqueue(q, 50);
     print_queue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
     dequeue(q);
     dequeue(q);
     dequeue(q);
