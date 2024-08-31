@@ -42,9 +42,10 @@ void enqueue(struct queue *q, int value)
 
 void dequeue(struct queue *q)
 {
-    if (q->front == -1)
+    if (q->front == -1 || q->front > q->rear)
     {
         printf("Queue is empty\n");
+        return;
     }
     else if (q->front == q->rear)
     {
