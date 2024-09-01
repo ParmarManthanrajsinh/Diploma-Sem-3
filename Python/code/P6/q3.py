@@ -18,7 +18,6 @@ for i in List:
         temp.append(i)
         
 List = temp
-temp.clear
-    
+del temp    
 
 print(List)
