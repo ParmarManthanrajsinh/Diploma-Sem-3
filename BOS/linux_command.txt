@@ -1,0 +1,118 @@
+
+### 1. `cal`
+- **Description**: Displays a calendar in the terminal. By default, it shows the current month's calendar.
+- **Usage**: `cal`  
+  To show a specific month's calendar, you can specify the month and year, e.g., `cal 9 2024` for September 2024.
+
+**Example Output**:
+```
+    September 2024
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30
+```
+
+### 2. `who`
+- **Description**: Displays a list of users currently logged into the system.
+- **Usage**: `who`
+
+**Example Output**:
+```
+user1    tty7         2024-09-03 10:00 (:0)
+user2    pts/0        2024-09-03 10:05 (192.168.1.2)
+```
+
+### 3. `cat`
+- **Description**: Concatenates and displays the content of files. It's often used to view the content of text files.
+- **Usage**: `cat filename`  
+  You can also concatenate multiple files: `cat file1 file2`.
+
+**Example Output**:
+```
+$ cat example.txt
+Hello, this is an example file.
+It contains multiple lines of text.
+```
+
+### 4. `echo`
+- **Description**: Displays a line of text or a string that is passed to it. It is commonly used to print environment variables or simple text.
+- **Usage**: `echo [option(s)] [string(s)]`
+
+**Example Output**:
+```
+$ echo Hello, World!
+Hello, World!
+```
+
+**With variables**:
+```
+$ echo $HOME
+/home/username
+```
+
+### 5. `exit`
+- **Description**: Exits the current shell session. It's used to log out or close the terminal.
+- **Usage**: `exit [n]`  
+  (Optionally, you can provide an exit status `n` to return a specific exit code.)
+
+**Example**:
+```
+$ exit
+```
+The terminal or SSH session closes.
+
+### 6. `man`
+- **Description**: Displays the manual pages of a command. It's used to find detailed information about other commands.
+- **Usage**: `man [command]`
+
+**Example Output**:
+```
+$ man ls
+LS(1)                     User Commands                    LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List information about the FILEs (the current directory by default).
+       Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+```
+
+### 7. `date`
+- **Description**: Displays or sets the system date and time.
+- **Usage**: `date`  
+  To display the current date and time, just type `date`.
+
+**Example Output**:
+```
+$ date
+Tue Sep  3 10:15:47 UTC 2024
+```
+
+### 8. `ls`
+- **Description**: Lists the contents of a directory. By default, it shows the files and directories in the current working directory.
+- **Usage**: `ls [option(s)] [file(s)]`  
+  Some common options are `-l` for long format, `-a` to include hidden files, and `-h` for human-readable file sizes.
+
+**Example Output**:
+```
+$ ls
+Desktop  Documents  Downloads  Music  Pictures  Videos
+
+$ ls -l
+total 28
+drwxr-xr-x 2 username username 4096 Sep  3 10:00 Desktop
+drwxr-xr-x 2 username username 4096 Sep  3 10:00 Documents
+drwxr-xr-x 2 username username 4096 Sep  3 10:00 Downloads
+drwxr-xr-x 2 username username 4096 Sep  3 10:00 Music
+drwxr-xr-x 2 username username 4096 Sep  3 10:00 Pictures
+drwxr-xr-x 2 username username 4096 Sep  3 10:00 Videos
+```
+
+These commands are fundamental in Linux and are used frequently for various tasks like navigation, file manipulation, system monitoring, and getting help on other commands.
