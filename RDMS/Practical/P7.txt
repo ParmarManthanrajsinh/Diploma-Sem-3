@@ -25,15 +25,15 @@ SQL>SELECT CURRENT, SUM(balance) AS total_balance
     HAVING SUM(balance) > 12000;
 
 Q4:
-SQL> select city,sum(salary) as total_salary from employee GROUP by city;
+SQL> select city,sum(salary) as total_salary from employee GROUP by city order by sum(salary) desc;
 
 CITY       TOTAL_SALARY
 ---------- ------------
+rajkot          9999999
+Surat             45000
 Anand             33000
 Vododara          20000
 Ahmedabad          5000
-Surat             45000
-rajkot          9999999
 
 
 

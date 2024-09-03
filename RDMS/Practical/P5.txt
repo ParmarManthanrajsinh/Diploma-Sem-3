@@ -43,11 +43,11 @@ ROUND(182.284,-2)
               200
 
 7. Find the value for 182.284 which is truncated to 1.
-SQL> select round(182.284,1) from dual;
+SQL> select trunc(182.284,1) from dual;
 
 ROUND(182.284,1)
 ----------------
-           182.3
+           182.2
 
 character function:- 
 
