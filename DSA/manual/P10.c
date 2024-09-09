@@ -25,20 +25,6 @@ struct node *insert_at_first(struct node *head, int value)
     return ptr;
 }
 
-void create_list(int size, struct node **ptr)
-{
-    struct node *n, *temp = NULL;
-    for (int i = 1; i <= size; i++)
-    {
-        n = (struct node *)malloc(sizeof(struct node));
-        n->data = i;
-        n->next = temp;
-        temp = n;
-    }
-    *ptr = temp;
-    printf("Done\n");
-}
-
 int main()
 {
     struct node *head;
@@ -46,9 +32,6 @@ int main()
 
     head = (struct node *)malloc(sizeof(struct node));
     node1 = (struct node *)malloc(sizeof(struct node));
-
-    create_list(5, &head);
-    print_list(head);
 
     head->data = 12;
     head->next = node1;
