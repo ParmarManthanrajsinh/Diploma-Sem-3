@@ -21,11 +21,10 @@ Tulsi
 Vaishali
 Shivali
 Gopi
-manthan
 Rajshree
 Laxmi
 
-7 rows selected.
+6 rows selected.
 
 Q6:
 SQL> select employee.ename from employee right join customer on employee.ename = customer.cname;
