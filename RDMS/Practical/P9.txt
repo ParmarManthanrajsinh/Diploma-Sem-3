@@ -16,3 +16,32 @@ Vaishali
 8 rows selected.
 
 Q2:
+
+CNAME
+----------
+Palak
+Tulsi
+Krishna
+Vaishali
+Shivali
+Tulsi
+Gopi
+Rajshree
+Vaishali
+Laxmi
+
+CNAME
+----------
+Shivali
+
+11 rows selected.
+
+Q3:
+
+SQL>  SELECT cname FROM customer intersect SELECT ename FROM employee;
+
+CNAME
+----------
+Shivali
+Tulsi
+Vaishali

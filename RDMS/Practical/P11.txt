@@ -1,0 +1,5 @@
+Q1:
+SQL> select balance from account where ano = (select ano from customer where customer.cid = 'C01');
+
+Q2:
+SQL> select balance from account where ano = (select ano from customer where customer.cname = 'Tulsi');

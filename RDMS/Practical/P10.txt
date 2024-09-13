@@ -1,0 +1,41 @@
+Q1:
+SQL> select * from account,branch where account.bname = branch.bname;
+
+Q2:
+SQL> select * from account,branch where account.ano = 'A01';
+
+Q3:
+SQL> SELECT e.employee_id, e.employee_name, m.employee_name AS manager_name
+     FROM employees e
+     LEFT JOIN employees m ON e.manager_id = m.employee_id;
+
+Q4:
+SQL> select * from account,branch;
+
+Q5:
+SQL> select employee.ename from employee left join customer on employee.ename = customer.cname;
+
+ENAME
+----------
+Tulsi
+Vaishali
+Shivali
+Gopi
+manthan
+Rajshree
+Laxmi
+
+7 rows selected.
+
+Q6:
+SQL> select employee.ename from employee right join customer on employee.ename = customer.cname;
+
+ENAME
+----------
+Tulsi
+Vaishali
+Shivali
+
+Q7:
+SQL> select employee.ename from employee full join customer on employee.ename = customer.cname;
+
