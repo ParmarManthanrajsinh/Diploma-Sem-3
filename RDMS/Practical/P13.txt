@@ -1,0 +1,19 @@
+Q1:
+SQL> create table users (id integer primary key, name varchar2(50),email varchar2(100), password varchar2(100));
+
+Table created.
+
+Q2:
+SQL> create table product (id integer primary key, name varchar2(100), price decimal(10,2) check (price>100),description varchar2(500));
+
+Table created.
+
+Q3:
+SQL> create table orders(id integer primary key,user_id integer references users(id), product_id integer references product(id), quantity integer not null);
+
+Table created.
+
+Q4:
+SQL> alter table employee modify(eid primary key, ename not NULL);
+
+Table altered.
