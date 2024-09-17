@@ -21,7 +21,6 @@ void print_list(struct node *n)
 struct node *insert(struct node *head, int value)
 {
     struct node *new_node = (struct node *)malloc(sizeof(struct node));
-    struct node *pre = head;
     struct node *ptr = head;
     new_node->data = value;
 
