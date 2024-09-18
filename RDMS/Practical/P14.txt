@@ -1,0 +1,16 @@
+Q1:
+SQL> create synonym emps for employee;
+
+Synonym created.
+
+Q2:
+SQL> create sequence seq_emp_id
+  2  start with 1
+  3  increment by 1;
+
+Sequence created.
+
+Q3:
+SQL> create index idx_emp_name on employee(ename);
+
+Index created.
