@@ -1,0 +1,14 @@
+Q1:
+SQL> create view employee_info as select ename,birthdate,salary from employee;
+
+View created.
+
+Q2:
+SQL> Create or replace VIEW employee_info AS SELECT * FROM employee WHERE salary > 10000;
+
+View created.
+
+Q3:
+SQL> drop view employee_info;
+
+View dropped.
