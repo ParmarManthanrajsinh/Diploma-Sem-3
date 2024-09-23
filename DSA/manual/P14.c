@@ -1,4 +1,3 @@
-// Implement insertion of node in sorted linked list.
 #include <stdio.h>
 #include <stdlib.h>
 
