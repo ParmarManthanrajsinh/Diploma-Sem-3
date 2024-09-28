@@ -11,15 +11,28 @@ struct BinaryTreeNode
     struct BinaryTreeNode *left, *right;
 };
 
+struct BinaryTreeNode *creatNode(int value)
+{
+    struct BinaryTreeNode *new_node = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
+    new_node->key = value;
+    new_node->left = NULL;
+    new_node->right = NULL;
+    return new_node;
+}
+
 struct BinaryTreeNode *insert(struct BinaryTreeNode *node, int value)
 {
     if (node == NULL)
     {
+<<<<<<< HEAD:DSA/manual/P17.c
         struct BinaryTreeNode *new_node = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
         new_node->key = value;
         new_node->left = NULL;
         new_node->right = NULL;
         return new_node;
+=======
+        return creatNode(value);
+>>>>>>> 91dc8a14efa71b5de2b6dbf4a67dd30042209863:DSA/manual/P17_2.c
     }
     if (value < node->key)
     {
@@ -31,6 +44,7 @@ struct BinaryTreeNode *insert(struct BinaryTreeNode *node, int value)
     }
     return node;
 }
+
 
 void inOrder(struct BinaryTreeNode *root)
 {
@@ -63,10 +77,7 @@ void postOrder(struct BinaryTreeNode *root)
 
 int main()
 {
-    struct BinaryTreeNode *root = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
-    root->key = 10;
-    root->right = NULL;
-    root->left = NULL;
+    struct BinaryTreeNode *root = creatNode(10);
 
     root = insert(root, 45);
     root = insert(root, 57);
