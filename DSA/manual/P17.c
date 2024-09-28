@@ -19,7 +19,6 @@ struct BinaryTreeNode *insert(struct BinaryTreeNode *node, int value)
         new_node->key = value;
         new_node->left = NULL;
         new_node->right = NULL;
-
         return new_node;
     }
     if (value < node->key)
