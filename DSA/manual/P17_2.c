@@ -1,4 +1,3 @@
-// Implement  construction  of  Binary  Search  Tree  (BST).
 // Implement  pre-order,  in-order,  post-order  traversal  methods  in  binary
 // search tree.
 
@@ -24,15 +23,7 @@ struct BinaryTreeNode *insert(struct BinaryTreeNode *node, int value)
 {
     if (node == NULL)
     {
-<<<<<<< HEAD:DSA/manual/P17.c
-        struct BinaryTreeNode *new_node = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
-        new_node->key = value;
-        new_node->left = NULL;
-        new_node->right = NULL;
-        return new_node;
-=======
         return creatNode(value);
->>>>>>> 91dc8a14efa71b5de2b6dbf4a67dd30042209863:DSA/manual/P17_2.c
     }
     if (value < node->key)
     {

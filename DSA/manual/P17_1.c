@@ -1,6 +1,4 @@
 // Implement  construction  of  Binary  Search  Tree  (BST).
-// Implement  pre-order,  in-order,  post-order  traversal  methods  in  binary
-// search tree.
 
 #include <stdio.h>
 #include <stdlib.h>
