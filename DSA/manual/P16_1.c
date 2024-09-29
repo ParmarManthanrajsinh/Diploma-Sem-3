@@ -25,23 +25,6 @@ struct node *delete_at_first(struct node *head)
     return head;
 }
 
-struct node *delete_at_end(struct node *head)
-{
-    struct node *p = head;
-    struct node *q = head->next;
-
-    while (q->next != NULL)
-    {
-        p = p->next;
-        q = q->next;
-    }
-
-    p->next = NULL;
-    free(q);
-
-    return head;
-}
-
 int main()
 {
     struct node *head;
@@ -67,7 +50,6 @@ int main()
     node3->next = NULL;
 
     print_list(head);
-    head = delete_at_end(head);
     head = delete_at_first(head);
     print_list(head);
 
