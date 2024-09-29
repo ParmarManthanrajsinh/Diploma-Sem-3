@@ -7,7 +7,7 @@ struct BinaryTreeNode
     struct BinaryTreeNode *left, *right;
 };
 
-struct BinaryTreeNode *creatNode(int value)
+struct BinaryTreeNode *createNode(int value)
 {
     struct BinaryTreeNode *ptr = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
     ptr->key = value;
@@ -16,19 +16,19 @@ struct BinaryTreeNode *creatNode(int value)
     return ptr;
 }
 
-struct BinaryTreeNode *insert(struct BinaryTreeNode *root, int value)
+struct BinaryTreeNode *insert_r(struct BinaryTreeNode *root, int value)
 {
     if (root == NULL)
     {
-        return creatNode(value);
+        return createNode(value);
     }
     if (root->key < value)
     {
-        root->right = insert(root->right, value);
+        root->right = insert_r(root->right, value);
     }
     else if (root->key > value)
     {
-        root->left = insert(root->left, value);
+        root->left = insert_r(root->left, value);
     }
     return root;
 }
@@ -52,12 +52,12 @@ struct BinaryTreeNode *search(struct BinaryTreeNode *node, int value)
 
 int main()
 {
-    struct BinaryTreeNode *root = creatNode(43);
-    root = insert(root, 45);
-    root = insert(root, 15);
-    root = insert(root, 95);
-    root = insert(root, 54);
-    root = insert(root, 25);
+    struct BinaryTreeNode *root = createNode(43);
+    root = insert_r(root, 45);
+    root = insert_r(root, 15);
+    root = insert_r(root, 95);
+    root = insert_r(root, 54);
+    root = insert_r(root, 25);
 
     if (search(root, 95) != NULL)
     {

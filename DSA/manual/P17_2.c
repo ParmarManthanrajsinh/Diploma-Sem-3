@@ -10,7 +10,7 @@ struct BinaryTreeNode
     struct BinaryTreeNode *left, *right;
 };
 
-struct BinaryTreeNode *creatNode(int value)
+struct BinaryTreeNode *createNode(int value)
 {
     struct BinaryTreeNode *new_node = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
     new_node->key = value;
@@ -23,7 +23,7 @@ struct BinaryTreeNode *insert(struct BinaryTreeNode *node, int value)
 {
     if (node == NULL)
     {
-        return creatNode(value);
+        return createNode(value);
     }
     if (value < node->key)
     {
@@ -68,7 +68,7 @@ void postOrder(struct BinaryTreeNode *root)
 
 int main()
 {
-    struct BinaryTreeNode *root = creatNode(10);
+    struct BinaryTreeNode *root = createNode(10);
 
     root = insert(root, 45);
     root = insert(root, 57);
