@@ -1,3 +1,35 @@
+/*
+Algorithm for Quick sort method.
+
+step 1: Read arr[], low , high , partiton_index
+
+step 2: if (low < high)
+            step 3
+
+step 3: partiton_index = call partition (arr , low , high)
+        self call (arr , low , partiton_index - 1)
+        self call (arr , partiton_index + 1, high)
+
+
+
+Algorithm for partition method.
+
+step 1: Read arr[], low , high
+        pivot = arr[low], i = low + 1, j = high
+
+step 2: repeat step 3 untill (i < j)
+
+step 3: repeat (i = i + 1) untill (arr[i] <= pivot)
+        repeat (j = j - 1) untill (arr[j] > pivot)
+        if (i < j)
+            swap arr[i] and arr[j]
+
+step 4: swap arr[low] and arr[j]
+
+step 5: return j
+
+*/
+
 #include <stdio.h>
 
 int partition(int arr[], int low, int high)

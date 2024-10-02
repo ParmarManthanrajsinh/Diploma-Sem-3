@@ -9,7 +9,7 @@ step 2: repeat step 3 untill (i < n - 1)
 step 3: repeat step 4 untill (j < n - i - 1)
         i = i + 1
 
-steo 4: if ( arr[j] > arr[j + 1]) then
+step 4: if ( arr[j] > arr[j + 1]) then
             swap arr[j] and arr[j + 1]
         j = j + 1
 

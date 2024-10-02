@@ -1,3 +1,47 @@
+/*
+
+Algorithm for Mergesort method.
+
+step 1: Read arr[] , low, high, mid
+
+step 2: if (low < high)
+            step 3
+
+step 3: mid = low + high / 2
+        self call (arr, low, mid)
+        self call (arr, mid + 1, high)
+        call merge(arr, min, low, high)
+
+Algorithm for Merge method.
+
+step 1: Read arr[], mid, low, high
+        i = low, j = mid + 1, k = low, temp[]
+
+step 2: repeat step 3 untill (i <= mid && j <= high)
+
+step 3: if (arr[i] < arr[j])
+            temp[k] = arr[i]
+            i = i + 1
+        else
+            temp[k] = arr[j]
+            j = j + 1
+        k = k + 1
+
+step 4: repeat step 5 untill (i <= mid)
+
+step 5: temp[k] = arr[i]
+        i = i + 1
+        k = k + 1
+
+step 6: repeat step 7 untill (j <= high)
+
+step 7: temp[k] = arr[j]
+        j = j + 1
+        k = k + 1
+
+step 8: copy temp[] in arr[]
+*/
+
 #include <stdio.h>
 
 void merge(int arr[], int mid, int low, int high)
