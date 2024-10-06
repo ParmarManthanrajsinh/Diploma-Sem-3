@@ -6,43 +6,33 @@
 
 import random
 
-print("0 for rock")
-print("1 for scrissor")
-print("2 for paper")
+move = {1: "stone", 2: "paper", 3: "scissor"}
 
-player = int(input("Enter your choise: "))
-computer = random.randint(0, 2)
+print("1. for stone")
+print("2. for paper")
+print("3. for scissor")
+player = int(input("Enter your choice: "))
 
-match player:
-    case 0:
-        print("rock vs ", end="")
-    case 1:
-        print("scissor vs ", end="")
-    case 2:
-        print("paper vs ", end="")
-    case _:
-        quit()
-match computer:
-    case 0:
-        print("rock")
-    case 1:
-        print("scissor")
-    case 2:
-        print("paper")
-    case _:
-        quit()
+computer = random.choice([1, 2, 3])
 
-if player == computer:
-    print("Draw")
-elif player == 0 and computer == 1:
-    print("Player Win")
-elif player == 0 and computer == 2:
-    print("Computer Win")
-elif player == 1 and computer == 0:
-    print("Computer Win")
-elif player == 1 and computer == 2:
-    print("Player Win")
-elif player == 2 and computer == 0:
-    print("Player Win")
-elif player == 2 and computer == 1:
-    print("Computer Win")
+if player <= 3:
+
+    print("Player:", move[player], end=" vs ")
+    print("Computer:", move[computer])
+
+    if player == computer:
+        print("Draw")
+    elif (player == 1) and (computer == 2):
+        print("Computer win")
+    elif (player == 1) and (computer == 3):
+        print("Player win")
+    elif (player == 2) and (computer == 1):
+        print("Player win")
+    elif (player == 2) and (computer == 3):
+        print("Computer win")
+    elif (player == 3) and (computer == 1):
+        print("Computer win")
+    elif (player == 3) and (computer == 2):
+        print("Player win")
+else:
+    print("invalid choice")
