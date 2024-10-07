@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <p class="active-tab">
+        <b>Current Tab</b>: <span></span>
+    </p>
+    <p class="previous-tab">
+        <b>Previous Tab</b>: <span></span>
+    </p>
+
+    <ul class="nav nav-tabs" id="Tab">
+        <li class="nav-item">
+            <a class="nav-link active" href="#home" data-toggle="tab">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#about" data-toggle="tab">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#contact" data-toggle="tab">Contact us</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content">
+        <div class="tab-pane active" id="home">
+            <p>Home pane</p>
+        </div>
+        <div class="tab-pane" id="about">
+            <p>About pane</p>
+        </div>
+        <div class="tab-pane" id="contact">
+            <p>Contact us pane</p>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+                var activeTab = $(e.target).text();
+                var previousTab = $(e.relatedTarget).text();
+                $(".active-tab span").html(activeTab);
+                $(".previous-tab span").html(previousTab);
+            });
+
+            // Set initial active tab
+            $(".active-tab span").html("Home");
+            $(".previous-tab span").html("");
+        });
+    </script>
+</body>
+
+</html>
