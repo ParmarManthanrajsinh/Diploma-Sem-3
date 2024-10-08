@@ -12,8 +12,6 @@ for line in file.readlines():
             char_list += ch
 
 char_list = sorted(char_list)
-print(char_list)
-
 
 count_key = 0
 no_char_list = []
