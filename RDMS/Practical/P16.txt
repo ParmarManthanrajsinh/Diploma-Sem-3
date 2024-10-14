@@ -1,0 +1,43 @@
+q1:
+DECLARE
+    v_account_number NUMBER;
+    v_balance NUMBER;
+    v_minimum_balance NUMBER := 5000;
+BEGIN
+    v_account_number :=: account_number;
+
+    SELECT balance INTO v_balance
+    FROM accounts
+    WHERE account_number = v_account_number;
+
+    IF v_balance < v_minimum_balance THEN
+        v_balance := v_balance - 100;
+
+        UPDATE accounts
+        SET balance = v_balance
+        WHERE account_number = v_account_number;
+
+        DBMS_OUTPUT.PUT_LINE('Rs. 100 has been deducted. New balance is: ' || v_balance);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Balance is sufficient. No deduction made.');
+    END IF;
+END;
+
+q2:
+DECLARE
+    v_branch_name VARCHAR2(100);
+    v_accounts_affected NUMBER;
+BEGIN
+    v_branch_name := '&branch_name';
+
+    UPDATE account
+    SET branch_name = UPPER(branch_name)
+    WHERE branch_name = LOWER(v_branch_name);
+
+    v_accounts_affected := SQL%ROWCOUNT;
+
+    DBMS_OUTPUT.PUT_LINE(v_accounts_affected || ' accounts affected by the update for branch: ' || v_branch_name);
+    
+    COMMIT;
+END;
+
