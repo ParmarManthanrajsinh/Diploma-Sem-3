@@ -1,0 +1,38 @@
+q1:
+DECLARE
+    v_employee_id NUMBER := 99999;
+    v_employee_name VARCHAR2(100);
+BEGIN
+    SELECT employee_name INTO v_employee_name
+    FROM employees
+    WHERE employee_id = v_employee_id;
+
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_employee_name);
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No employee found with ID: ' || v_employee_id);
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+
+q2:
+DECLARE
+    v_employee_id NUMBER := 100;
+    v_employee_name VARCHAR2(100) := 'John Doe';
+    v_salary NUMBER := 50000;
+
+    DUP_VAL_ON_INDEX EXCEPTION;
+    PRAGMA EXCEPTION_INIT(DUP_VAL_ON_INDEX, -1);
+BEGIN
+    INSERT INTO employees (employee_id, employee_name, salary)
+    VALUES (v_employee_id, v_employee_name, v_salary);
+
+EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+        DBMS_OUTPUT.PUT_LINE('Error: A record already exists with employee ID: ' || v_employee_id);
+    WHEN VALUE_ERROR THEN
+        DBMS_OUTPUT.PUT_LINE('Error: A NULL value was provided for the primary key (employee_id).');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;

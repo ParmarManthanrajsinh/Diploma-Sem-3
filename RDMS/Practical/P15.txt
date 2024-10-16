@@ -1,0 +1,31 @@
+q1: 
+DECLARE
+BEGIN
+    FOR i IN REVERSE 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+
+q2:
+DECLARE
+    A NUMBER;
+    B NUMBER;
+    C NUMBER;
+    max_value NUMBER;
+BEGIN
+    A :=: A;
+    B :=: B;
+    C :=: C;
+
+    max_value := A;
+
+    IF B > max_value THEN
+        max_value := B;
+    END IF;
+
+    IF C > max_value THEN
+        max_value := C;
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('The maximum value is: ' || max_value);
+END;
