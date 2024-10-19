@@ -1,0 +1,62 @@
+q1:
+CREATE OR REPLACE TRIGGER prevent_salary_update_for_surat
+BEFORE UPDATE OF salary
+ON employees
+FOR EACH ROW
+BEGIN
+  IF (SELECT city FROM employees WHERE employee_id = :OLD.employee_id) = 'Surat' THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Salary changes are not allowed for employees residing in Surat.');
+  END IF;
+END;
+
+example:
+UPDATE employees
+SET salary = salary + 5000
+WHERE employee_id = 101;
+
+
+q2:
+CREATE OR REPLACE TRIGGER account_table_operations
+BEFORE INSERT OR UPDATE OR DELETE
+ON Account
+FOR EACH ROW
+BEGIN
+  IF INSERTING THEN
+    DBMS_OUTPUT.PUT_LINE('Insert operation performed on Account table.');
+  ELSIF UPDATING THEN
+    DBMS_OUTPUT.PUT_LINE('Update operation performed on Account table.');
+  ELSIF DELETING THEN
+    DBMS_OUTPUT.PUT_LINE('Delete operation performed on Account table.');
+  END IF;
+END;
+
+example:
+- **Insert**:
+```plsql
+INSERT INTO Account (account_id, balance) VALUES (101, 5000);
+```
+Output:
+```
+Insert operation performed on Account table.
+```
+
+- **Update**:
+```plsql
+UPDATE Account
+SET balance = balance + 1000
+WHERE account_id = 101;
+```
+Output:
+```
+Update operation performed on Account table.
+```
+
+- **Delete**:
+```plsql
+DELETE FROM Account
+WHERE account_id = 101;
+```
+Output:
+```
+Delete operation performed on Account table.
+```

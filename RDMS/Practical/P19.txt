@@ -1,0 +1,55 @@
+CREATE OR REPLACE PACKAGE Employee_Info AS
+  FUNCTION get_salary(emp_id IN NUMBER) RETURN NUMBER;
+  FUNCTION get_city(emp_id IN NUMBER) RETURN VARCHAR2;
+END Employee_Info;
+
+CREATE OR REPLACE PACKAGE BODY Employee_Info AS
+  
+  FUNCTION get_salary(emp_id IN NUMBER) RETURN NUMBER IS
+    emp_salary NUMBER;
+  BEGIN
+    SELECT sal
+    INTO emp_salary
+    FROM emp
+    WHERE empno = emp_id;
+    
+    RETURN emp_salary;
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('Employee not found for ID: ' || emp_id);
+      RETURN NULL;
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+      RETURN NULL;
+  END get_salary;
+
+  FUNCTION get_city(emp_id IN NUMBER) RETURN VARCHAR2 IS
+    emp_job VARCHAR2(100);
+  BEGIN
+    SELECT job
+    INTO emp_job
+    FROM emp
+    WHERE empno = emp_id;
+    
+    RETURN emp_job;
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('Employee not found for ID: ' || emp_id);
+      RETURN NULL;
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+      RETURN NULL;
+  END get_city;
+
+END Employee_Info;
+
+DECLARE
+  emp_salary NUMBER;
+  emp_job VARCHAR2(100);
+BEGIN
+  emp_salary := Employee_Info.get_salary(7369);
+  DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_salary);
+
+  emp_job := Employee_Info.get_city(7369);
+  DBMS_OUTPUT.PUT_LINE('Employee Job Title: ' || emp_job);
+END;

@@ -1,0 +1,41 @@
+q1:
+DECLARE
+  length NUMBER;
+  width NUMBER;
+  area NUMBER;
+
+  FUNCTION calculate_area(l NUMBER, w NUMBER) RETURN NUMBER IS
+  BEGIN
+    RETURN l * w;
+  END;
+
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Enter the length of the rectangle:');
+  length := &Enter_Length;
+
+  DBMS_OUTPUT.PUT_LINE('Enter the width of the rectangle:');
+  width := &Enter_Width;
+
+  area := calculate_area(length, width);
+
+  DBMS_OUTPUT.PUT_LINE('The area of the rectangle is: ' || area);
+END;
+
+q2:
+CREATE OR REPLACE PROCEDURE get_employee_name(
+  emp_number IN NUMBER,
+  emp_name OUT VARCHAR2
+) IS
+BEGIN
+  SELECT ename
+  INTO emp_name
+  FROM emp
+  WHERE empno = emp_number;
+  
+  DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Employee not found for Employee Number: ' || emp_number);
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
