@@ -18,11 +18,9 @@ void print_queue(struct queue *q)
     }
 
     int i = q->front;
-    while (1)
+    while (i != q->rear)
     {
         printf("%d ", q->arr[i]);
-        if (i == q->rear)
-            break;
         i = (i + 1) % q->size;
     }
     printf("\n");
