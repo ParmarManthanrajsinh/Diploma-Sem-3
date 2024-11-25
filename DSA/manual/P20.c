@@ -8,6 +8,7 @@ step 1: read arr[] , n , i = 0
 step 2: repeat step 3 untill (i < n - 1)
 
 step 3: min = i
+        j = i + 1
         repeat step 4 untill (j < n)
         swap arr[i] and arr[min]
         i = i + 1
