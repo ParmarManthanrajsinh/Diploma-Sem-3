@@ -5,7 +5,7 @@ Here you'll find all my projects and practicals organized by subject.
 
 ## 📂 Folder Structure
 - **.vscode/** - Configuration files for VS Code
-- **BOS/** - Business Organization Systems 📊
+- **BOS/** - Basics of Operating System 📊
 - **DSA/** - Data Structures & Algorithms 🛠️
 - **Python/** - Python Practicals 🐍
 - **RDMS/** - Relational Database Management System 🗄️
