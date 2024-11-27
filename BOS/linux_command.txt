@@ -114,5 +114,3 @@ drwxr-xr-x 2 username username 4096 Sep  3 10:00 Music
 drwxr-xr-x 2 username username 4096 Sep  3 10:00 Pictures
 drwxr-xr-x 2 username username 4096 Sep  3 10:00 Videos
 ```
-
-These commands are fundamental in Linux and are used frequently for various tasks like navigation, file manipulation, system monitoring, and getting help on other commands.
