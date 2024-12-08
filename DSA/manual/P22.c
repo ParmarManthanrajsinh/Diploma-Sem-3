@@ -6,6 +6,7 @@ step 1: read arr[] , n ,key ,i = 1 , j = 0
 step 2: repeat step 3 untill ( i < n )
 
 step 3: key = arr[i]
+        j = i - 1
         repeat step 4 untill ( j >= 0 and arr[j] > key )
         arr[j+1] = key
         i = i + 1
