@@ -29,6 +29,18 @@ step 3: if (arr[i] < arr[j])
 
 step 4: repeat step 5 untill (i <= mid)
 
+step 5: temp[k] = arr[i]
+        i = i + 1
+        k = k + 1
+
+step 6: repeat step 7 untill (j <= high)
+
+step 7: temp[k] = arr[j]
+        j = j + 1
+        k = k + 1
+
+step 8: copy temp[] in arr[]
+
 */
 
 #include <stdio.h>
